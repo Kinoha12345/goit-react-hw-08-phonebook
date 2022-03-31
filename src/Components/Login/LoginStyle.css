@@ -1,0 +1,32 @@
+.form-login {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.email-text {
+    margin-bottom: 10px;
+}
+
+.pas-text {
+    margin-bottom: 10px;
+}
+
+.email-input {
+    height: 20px;
+    width: 300px;
+}
+
+.pas-input {
+    height: 20px;
+    width: 300px; 
+}
+
+.login-btn {
+    margin-top: 40px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 120px;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {login} from '../../redux/auth/authOperation'
+import {login} from '../../redux/auth/authOperation';
+import "./LoginStyle.css"
 const Login = () => {
     const [form, setForm] = useState({
         email: "",
@@ -23,13 +24,14 @@ const Login = () => {
         
       };
     return (
-        <form action="" onSubmit={handleSubmit}>
-            <h2>Email</h2>
-            <input type="email" name="email" placeholder="email" value={form.email} onChange={handleChange}/>
-            <h2>Password</h2>
-            <input type="password" name="password" placeholder="password" value={form.password} onChange={handleChange}/>
+        <form className="form-login" action="" onSubmit={handleSubmit}>
+            
+            <h2 className="email-text">Email</h2>
+            <input className="email-input" type="email" name="email" placeholder="email" value={form.email} onChange={handleChange}/>
+            <h2 className="pas-text">Password</h2>
+            <input className="pas-input" type="password" name="password" placeholder="password" value={form.password} onChange={handleChange}/>
           
-            <button type="submit">Login</button>
+            <button className="login-btn" type="submit">Login</button>
             
         </form>
         )

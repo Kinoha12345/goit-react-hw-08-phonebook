@@ -1,5 +1,5 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {signUp, signIn} from '../../untils/mockApi';
+import {signUp, signIn, logOut} from '../../untils/mockApi';
 
 export const register = createAsyncThunk('users/register', async(regInf,thunkApi) => {
     try {
@@ -15,6 +15,24 @@ export const login = createAsyncThunk('users/signin', async(logInf,thunkApi) => 
         const result = await signIn(logInf)
         return result.data
     } catch (error) {
+        thunkApi.rejectWithValue(error.message)
+    }
+})
+
+// export const exit = createAsyncThunk('users/exit', async(token, thunkApi) => {
+//     try {
+//         const result = await logOut(token)
+//         return result.data
+//     } catch (error){
+//         thunkApi.rejectWithValue(error.message)
+//     }
+// })
+
+export const exit = createAsyncThunk('users/exit', async(_, thunkApi) => {
+    try {
+        const result = await logOut()
+        return result.data
+    } catch (error){
         thunkApi.rejectWithValue(error.message)
     }
 })

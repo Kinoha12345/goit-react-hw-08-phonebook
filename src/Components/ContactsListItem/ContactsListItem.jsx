@@ -1,8 +1,20 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {removeContacts} from '../../redux/contacts/contactsOperations';
-const ContactsListItem = ({ filterItems }) => {
+import {removeContacts, getContacts} from '../../redux/contacts/contactsOperations';
+const ContactsListItem = () => {
   const filter = useSelector((state) => state.contacts.filter)
+  const contacts = useSelector((state) => state.contacts.items);
   const dispatch = useDispatch();
+  // console.log(filterItems(filter));
+  useEffect(() => {
+    dispatch(getContacts())
+  },[dispatch])
+  const filterItems = (query) => {
+    
+    return contacts.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()) && item);
+  };
+  
+
   return (
     <>
       {filterItems(filter).map((contact) => (
@@ -13,7 +25,8 @@ const ContactsListItem = ({ filterItems }) => {
           <button
             type="button"
             onClick={(e) => {
-             dispatch(removeContacts(contact.id)) ;
+            return dispatch(removeContacts(contact.id))
+            //  dispatch(getContacts())
             }}
           >
             Delete

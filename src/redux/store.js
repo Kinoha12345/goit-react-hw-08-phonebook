@@ -10,8 +10,6 @@ const store = configureStore({
       devTools: process.env.NODE_ENV === "development",
 })
 
-console.log(auth);
-console.log(contacts);
 console.log("store :>> ", store);
 
 export default store;

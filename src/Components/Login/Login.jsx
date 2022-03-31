@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {login} from '../../redux/auth/authOperation'
-
 const Login = () => {
     const [form, setForm] = useState({
         email: "",
@@ -15,13 +14,13 @@ const Login = () => {
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(form);
         dispatch(login(form))
         setForm({
             name: "",
             email: "",
             password: ""
         })
+        
       };
     return (
         <form action="" onSubmit={handleSubmit}>

@@ -1,0 +1,23 @@
+.contact-form {
+    margin-left: 50px;
+}
+
+.add-btn {
+    margin-top: 40px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 120px;
+}
+
+.addN-input {
+    height: 20px;
+    width: 300px;
+}
+
+.addNum-input {
+    height: 20px;
+    width: 300px;
+}

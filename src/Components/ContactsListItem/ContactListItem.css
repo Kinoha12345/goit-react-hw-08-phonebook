@@ -1,0 +1,11 @@
+.contact-item {
+    margin-left: 11px;
+    list-style: none;
+    display: flex; 
+    align-items: center;
+}
+
+.rem-btn {
+    height: 30px;
+    margin-left: 10px;
+}

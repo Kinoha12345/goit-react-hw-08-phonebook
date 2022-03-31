@@ -2,6 +2,7 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
 import {addContact} from '../../redux/contacts/contactsOperations';
+import './FormStyle.css';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -39,9 +40,10 @@ const Form = () => {
   };
     return ( 
      <>
-     <h2>Name</h2>
-       <form onSubmit={onBtnSubmit}>
-           <input onChange={onInputValue}
+     
+       <form className="contact-form" onSubmit={onBtnSubmit}>
+       <h2 >Name</h2>
+           <input className="addN-input" onChange={onInputValue}
         type="text"
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -49,7 +51,7 @@ const Form = () => {
         required
       />
       <h2>Number</h2>
-      <input onChange={onInputValue}
+      <input className="addNum-input" onChange={onInputValue}
   type="tel"
   name="number"
   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -57,7 +59,7 @@ const Form = () => {
   required
 />
 
-      <button type="submit" >Add Contact</button>
+      <button className="add-btn" type="submit" >Add Contact</button>
        </form>
       
        </>

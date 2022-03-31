@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {removeContacts, getContacts} from '../../redux/contacts/contactsOperations';
+import './ContactListItem.css';
+
 const ContactsListItem = () => {
   const filter = useSelector((state) => state.contacts.filter)
   const contacts = useSelector((state) => state.contacts.items);
@@ -18,11 +20,12 @@ const ContactsListItem = () => {
   return (
     <>
       {filterItems(filter).map((contact) => (
-        <li key={contact.id}>
+        <li className="contact-item" key={contact.id}>
           <p>
-            {contact.name}:{contact.number}
+            {contact.name}: {contact.number}
           </p>
           <button
+          className="rem-btn"
             type="button"
             onClick={(e) => {
             return dispatch(removeContacts(contact.id))
